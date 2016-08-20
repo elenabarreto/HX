@@ -1,0 +1,22 @@
+
+.header .nav-menu li.menu-dropdown ul {
+    top: -10px;
+    margin-top: -10px;
+}
+
+.form .options.courses .option {
+    padding-left: 50px;
+    padding-right: 20px;
+}
+
+.form .options.courses .option.red {
+    background-position: 25px -48px;
+}
+
+.form .options.courses .option.yellow {
+    background-position: 25px -8px;
+}
+
+.form .options.courses .option.blue {
+    background-position: 25px 30px;
+}
