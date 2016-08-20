@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../static/js/jquery.js"></script>
+    <script src="../static/js/materialize.min.js"></script>
+    <script src="../static/js/app.js"></script>
+    <link rel="stylesheet" href="../static/css/materialize.min.css">
+    <link rel="stylesheet" href="../static/css/infoController.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <body class="container">    
+  
+    <div class="infor row card cyan lighten-5">
+     <div class="row">
+        <div class="col s4">
+          <a class="waves-effect waves-light btn bottom-btn" onclick="btn1Click();"><i class="material-icons">account_balance</i></a>
+        </div>
+        <div class="col s4">
+          <a class="waves-effect waves-light btn bottom-btn" onclick="btn2Click();"><i class="material-icons">streetview</i></a>
+        </div>
+        <div class="col s4">
+          <a class="waves-effect waves-light btn bottom-btn" onclick="btn3Click();"><i class="material-icons">people_outline</i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card hoverable">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img id="cardImage" class="activator" src="../static/images/card.png">
+      </div>
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4"><strong id="cardTitle">Title 1</strong><i class="material-icons right">more_vert</i></span>
+        <p><a id="cardWLink" href="#"><span id="cardLink"> Link 1 </span></a></p>
+      </div>
+      <div class="card-reveal cyan lighten-5">
+        <span class="card-title grey-text text-darken-4"><strong id="cardTitle">Title 1</strong><i class="material-icons right">close</i></span>
+        <div id=cardHtml></div>
+
+          <video class="responsive-video" controls>
+          <source src="../static/video/Bienal2016.mp4" type="video/mp4">
+          </video>
+          <p id="cardContent"></p>
+ 
+      </div>
+    </div>
+    
+    <div class="infor row">
+        <div class="col s4 offset-s4 m2 offset-m5">
+          <a class="waves-effect waves-light btn col s12 bottom-btn"><i class="material-icons">picture_as_pdf</i></a>
+        </div>
+    </div>
+    <a class="btn-floating btn-large waves-effect waves-light right red fixed-btn-bottom"><i class="material-icons">home</i></a>
+        
+  </body>
+</html>

@@ -1,0 +1,337 @@
+{{#extend 'layout.html'}}
+<head>
+    <meta charset="utf-8">
+    <!-- www.phpied.com/conditional-comments-block-downloads/ -->
+    <!-- Always force latest IE rendering engine
+         (even in intranet) & Chrome Frame
+         Remove this if you use the .htaccess -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge{{=not request.is_local and ',chrome=1' or ''}}">
+    <!--  Mobile Viewport Fix
+          j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag
+          device-width: Occupy full width of the screen in its current orientation
+          initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+          user-scalable = yes allows the user to zoom in -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informacion Bienal</title>
+    <!-- http://dev.w3.org/html5/markup/meta.name.html -->
+    <meta name="application-name" content="{{=request.application}}">
+    <!-- Speaking of Google, don't forget to set your site up:
+         http://google.com/webmasters -->
+    <meta name="google-site-verification" content="">
+    <!-- include stylesheets -->
+    <link rel="stylesheet" href="{{=URL('static','css/infoController.css')}}"/>
+    <!-- Material Lite -->
+    <!--<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-pink.min.css">-->
+    <!-- Bootstrap -->
+     <link rel="stylesheet" href="{{=URL('static','css/bootstrap.min.css')}}"/>
+    <link rel="stylesheet" href="{{=URL('static','css/web2py-bootstrap3.css')}}"/>
+    
+    <link rel="shortcut icon" href="{{=URL('static','images/favicon.ico')}}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{{=URL('static','images/favicon.png')}}">
+    <!-- All JavaScript at the bottom, except for Modernizr which enables
+         HTML5 elements & feature detects -->
+    <script src="{{=URL('static','js/modernizr-2.8.3.min.js')}}"></script>
+    <!--[if lt IE 9]>
+        <script src="{{=URL('static','js/respond-1.4.2.min.js')}}"></script>
+        <![endif]-->
+    <!-- Favicons -->
+    {{include 'web2py_ajax.html'}} <!-- this includes jquery.js, calendar.js/.css and web2py.js -->
+    {{block head}}{{end}}
+    {{
+    # using sidebars need to know what sidebar you want to use
+    mc0 = 'col-md-12'
+    mc1 = 'col-md-9'
+    mc2 = 'col-md-6'
+    left_sidebar_enabled = globals().get('left_sidebar_enabled', False)
+    right_sidebar_enabled = globals().get('right_sidebar_enabled', False)
+    middle_column = {0: mc0, 1: mc1, 2: mc2}[
+    (left_sidebar_enabled and 1 or 0)+(right_sidebar_enabled and 1 or 0)]
+    }}
+  </head>
+<body>
+    <!-- Aca va mi Codigo -->
+  <nav id="navbar1" class="navbar navbar-default  navbar-collapse" role="tablist">
+    <div class="container">
+    	<center>
+  	    <a href="#bienal" aria-controls="home" role="tab" data-toggle="tab"><button id="buttonNavbar" type="button" class="btn btn-default navbar-btn"><img id="button-Nav-Img" src="{{=URL('static','images/info-bienal.jpg')}}"></button></a>
+  	    <a href="#urunday" aria-controls="profile" role="tab" data-toggle="tab"><button id="buttonNavbar" type="button" class="btn btn-default navbar-btn"><img id="button-Nav-Img" src="{{=URL('static','images/info-urunday.jpg')}}"></button></a>
+  	    <a href="#artistas" aria-controls="settings" role="tab" data-toggle="tab"><button id="buttonNavbar" type="button" class="btn btn-default navbar-btn "><img id="button-Nav-Img" src="{{=URL('static','images/info-artistas.png')}}"></span></button></a>
+    	</center>
+    </div>
+  </nav>
+ 
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+  	<div role="tabpanel" class="tab-pane active" id="bienal">
+  		<div id="jumbotron-bienal" class="jumbotron">
+  		  <center><U><h3>Bienal internacional de Esculturas</h3></U></center>
+        <hr>
+        <img id="imagen-Logo-Bienal" src="{{=URL('static','images/bienal-logo.png')}}"align="right" hspace="10">
+  		  <div id="contenido-bienal" class="container"><font size ="10"face="arial" color="black"><p align="justify">La “Bienal Internacional de Esculturas” que se realiza desde 1988 en la ciudad de Resistencia, Argentina, es un concurso organizado por la Fundación Urunday y el Gobierno de la Provincia del Chaco. En cada edición, entre diez y quince artistas del ámbito regional, nacional e internacional son previamente seleccionados teniendo en cuenta su participación en éste u otros certámenes previos. Durante el plazo de una semana, deben realizar su obra al aire libre y a la vista de los visitantes. Al finalizar la semana, el sábado por la noche, se lleva a cabo una ceremonia de clausura, con su correspondiente entrega de premios. Al finalizar el concurso, las obras son expuestas durante 60 días. Luego de este tiempo, son repartidas en distintos puntos de la ciudad bajo el título de Patrimonio Cultural de la Ciudad de las Esculturas.
+        <p align="justify">
+        El concurso es el evento más importante que se lleva a cabo en Resistencia y esto se ve reflejado en los visitantes que reciben los escultores por día y los asistentes al acto de clausura. En los alrededores del área de trabajo se realizan distintas actividades culturales, como seminarios de arte, conciertos y espectáculos.
+        <p align="justify">
+        El eslogan con el que históricamente la Fundación Urunday presentó este certamen es el siguiente: &quot;<B>Invitamos a todos los habitantes del planeta a sentir la calidez de nuestra gente. Y les aseguramos, que en cada invierno de sus vidas, habrá un Chaco y una Resistencia, la Ciudad de las Esculturas.&quot;</B>
+        </p>
+        </font>
+        </div>
+        <center><p><a id ="btn-Urunday"class="btn btn-primary btn-lg" href="http://www.bienaldelchaco.org/" role="button" target="_blank">Mas Información</a></p></center>
+  		</div>
+  	</div>
+
+  	<div role="tabpanel" class="tab-pane" id="urunday">
+      <div class="jumbotron" id ="jumbotron-urunday">
+       <center><U><h3>Fundacion Urunday</h3></U></center>
+        <hr>
+        <img id="imagen-Logo-Bienal" src="{{=URL('static','images/bienal-logo.png')}}"align="right" hspace="10">
+        <div id="contenido-bienal" class="container"><font size ="10"face="arial" color="black"><p align="justify">Resistencia se esculpe y de esta impronta volumétrica y policromada nace la <B>Fundación Urunday</B>, en noviembre de 1989. Una gestación que tiene como consigna permanente unir a los escultores de Argentina, de América y del mundo, de cobijarlos en su tierra, de desafiarlos a crear en cada nuevo concurso. Generando acontecimientos hasta entonces inéditos en el país, que se erguieron como inagotables proveedores de obras que enriquecen un patrimonio único.
+        <p align="justify">
+        Esta institución, es también la responsable de mantener en perfectas condiciones más de 600 esculturas que hacen de Resistencia un gran museo al aire libre, orgullo de todos aquellos que tienen la oportunidad de conocerlo.
+        <p align="justify">
+        <B>La Fundación Urunday ha logrado promover la Cultura mediante una de sus disciplinas, instalar los concursos al aire libre como espacio de intercambio sociocultural entre el artista y los distintos pueblos de nuestro país y del mundo, insertar a la Argentina en los circuitos internacionales de concursos de escultura en espacios públicos y transformar a Resistencia en un museo al aire libre de características únicas, con miras de ser reconocida como patrimonio cultural de la humanidad.</B>
+        <p align="justify">
+          <font color= "red"><U><B>MISIÓN</B></U></font>
+          <p>
+          Mejorar la realidad social y económica de nuestra provincia a través del ARTE como agente transformador.
+          <p align="justify">
+          <font color= "red"><U><B>VISIÓN</B></U></font>
+          <p>
+          Hacer del ARTE un BIEN de todos.
+        </p>
+        </font>
+        </div>
+        <center><p><a id ="btn-Urunday"class="btn btn-primary btn-lg" href="http://www.fundacionurunday.org/" role="button" target="_blank">Mas Información</a></p></center>
+      </div>
+    </div>
+    
+    <div role="tabpanel" class="tab-pane" id="artistas">
+      <div id="bodyArtistas" clas="container">
+		    <div class="row">
+          <!-- Artista Wu Ming-Sheng-->
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+              <img src="http://www.bienaldelchaco.org/actividades/img/concurso_portada_taiwan.png" height="500" width="500"alt="...">
+              <div class="caption">
+                <h3>Wu Ming-Sheng<p>Taiwán</h3>
+                <p><B>2015:</B> 1º Premio, 7º Simposio Internacional de Esculturas de Teherán, Irán.
+                <p><B>2012:</B> Parque de Esculturas de la Universidad Nacional de Dong Hwa.
+                <p><B>2008:</B> 1º Premio, Concurso de Arte Público del Museo de Hsinchu, Taiwán.
+                <p><B>1993:</B> 1º Premio, 24º Competencia Internacional de Habilidades, Escuela de Piedra, Taiwán.
+                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+              </div>
+            </div>
+          </div>
+          <!-- Artista Hiroyuki Asakawa-->
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+              <img src="http://www.bienaldelchaco.org/actividades/img/concurso_portada_japon.png" height="500" width="500"alt="...">
+              <div class="caption">
+                <h3>Hiroyuki Asakawa<p>Japón</h3>
+                <p><B>2012:</B> Premio Estímulo, Trienal de Escultura en Piedra de la ciudad de Takamastsu, Japón.
+                <p><B>1999:</B> 1º Premio, ISeYOSI Anual 1999, en piedra, Galería Iseyoshi, Tokio, Japón.
+                <p><B>1997:</B> 3º Premio Universidad de Compras.
+                <p><B>1995:</B> Premio Salón Printemps.
+                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+              </div>
+            </div>
+          </div>
+          <!-- Artista Pascale Archambault-->
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+              <img src="http://www.bienaldelchaco.org/actividades/img/concurso_portada_canada.png" height="500" width="500"alt="...">
+              <div class="caption">
+                <h3>Pascale Archambault<p>Canadá</h3>
+                <p><B>2007:</B> Subvención de viaje, Embajada de Canadá en Guatemala; 1º Festival internacional de Escultura, Guatemala Inmortal; Premio del público, Premio de los niños.
+                <p><B>1997:</B> Primer Concurso Internacional de Escultura en mármol de Montevideo, Uruguay, Reconocimiento del jurado, Premio del público.
+                <p><B>1996:</B> Subvención de viaje, Ministerio de Relaciones Internacionales de Québec; Segunda Trienal Americana de Escultura, Resistencia, Argentina, Premio del público Juan Alberto García, Premio Nuevo Banco del Chaco.
+                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <!-- Artista Néstor Vildoza-->
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+              <img src="http://www.bienaldelchaco.org/actividades/img/concurso_portada_argentina.png" height="500" width="500"alt="...">
+              <div class="caption">
+                <h3>Néstor Vildoza<p>Argentina</h3>
+                <p><B>2012:</B> Premio Femechaco. Bienal Internacional de Escultura.
+                <p><B>2008:</B> 2º Premio. Simposio de Escultura de Differdange, Luxemburgo.
+                <p><B>2006:</B> 3º Premio. Simposio Internacional de Escultura en Piedra. Julienne, Francia.
+                <p><B>2002:</B> 2º Premio Adquisición. 79º Salón Nacional de Artes Plásticas. Santa Fe.
+                <p><B>2000:</B> 3º Premio. Simposio Internacional de Escultura Moderna. Lima, Perú.
+                <p><B>1999:</B> 2º Premio. Concurso Nacional de Escultura en Mármol negro. Parque Avellaneda, Buenos Aires; Premio Escultores. Concurso Nacional de Escultura en Mármol negro. Parque Avellaneda. - Buenos Aires; Premio de la Ciudad de La Rioja en Artes Plásticas. Famatina de plata.
+                <p><B>1998:</B> Mención del Salón Nacional de Escultura. Argentina.
+                <p><B>1997:</B> 2º Premio y Premio Escultores. Simposio Internacional de Escultura en Madera. - Alem, Misiones.
+                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+              </div>
+            </div>
+          </div>
+          <!-- Artista Behnam Akharbin Moghanlou-->
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+              <img src="http://www.bienaldelchaco.org/actividades/img/concurso_portada_iran.png" height="500" width="500"alt="...">
+              <div class="caption">
+                <h3>Behnam Akharbin Moghanlou<p>Irán</h3>
+                <p><B>2015:</B> 1º arte ambiental de Teherán, Irán.
+                <p><B>2015:</B> 2º simposio de escultura de piedra nacional de Tabriz, Irán.
+                <p><B>2014:</B> 6º simposio internacional de escultura de piedra de Teherán, Irán.
+                <p><B>2013:</B> 5º simposio Internacional de escultura de madera de Teherán, Irán.
+                <p><B>2012:</B> 3º bienal de escultura tor espacio urbano de Tehran, Irán.
+                <p><B>2012:</B> Realización de gran escultura de piedra de la plaza en la ciudad de isargharan Mahalat, Irán.
+                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+              </div>
+            </div>
+          </div>
+          <!-- Artista Qian Sihua-->
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+              <img src="http://www.bienaldelchaco.org/actividades/img/concurso_portada_china.png" height="500" width="500"alt="...">
+              <div class="caption">
+                <h3>Qian Sihua<p>China</h3>
+                <p><B>2014:</B> Premio Especial del Jurado, en el 6º Simposio Internacional de Escultura de Teherán, Irán. Escuchando al Mar y Trabajos Excelentes, en el Simposio Internacional de Esculturas de Ping Tan, China. 
+                <p><B>2012:</B> Medalla de Bronce, Nuestro Camino, Premio de Escultura en Hua Tianyou, China.
+                <p><B>2008:</B> Premio Quinto Elemento de los Anillos Olímpicos, en la Exhibición Pública de Arte en los Juegos Olímpicos, China.
+                <p><B>2002:</B> Premio por Escultura Pública en la ciudad de Tian Water, China.
+                <p><B>1998:</B> Luz de Sol, Medalla de Bronce en la 9º Exhibición del Festival de Bellas Artes de China, Beijing, China. Premio por su obra El Hijo de la Tierra, en el 4º Festival de Artes de Ba Shu, Sichuán, China.
+                <p><B>1994:</B> Premio a la Excelencia por su obra Camino de la Esperanza en la 8º Exhibición del Festival de Bellas Artes de China.
+                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <!-- Artista Milton Estrella-->
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+              <img src="http://www.bienaldelchaco.org/actividades/img/concurso_portada_ecuador.png" height="500" width="500"alt="...">
+              <div class="caption">
+                <h3>Milton Estrella<p>Ecuador</h3>
+                <p><B>2015:</B> 1º Premio Estatuilla Colibrí Premio Cineastas, Actores y Actrices, Ecuador.
+                <p><B>2012:</B> 1º Premio en el Carnaval Internacional de Escultura de Canadá.
+                <p><B>2010:</B> 1º Premio en el Simposio Internacional de Escultural en Machachi, Ecuador.
+                <p><B>2008:</B> 1º Premio, Escultura del Comité Olímpico Ecuatoriano, Guayaquil; Olimpiadas Beijin, China; Concurso de escultura mundial; Primera Mención de Honor en el concurso de Pintura, Ecuador.
+                <p><B>2006:</B> Segundos Honores, Hall Third National Sculpture Museo de Arte Moderno, Cuenca.
+                <p><B>2000:</B> 1º Premio, Concurso de Retrato Museo de la Fundacion Ecuatoriana de Desarrollo, Ecuador.
+                <p><B>1995:</B> 1º Premio en el Concurso de Escultura de Mariano Aguilera, Quito; 1º Mención de Honor en el XXXVII Concurso de Pintura; Salón Nacional de Octubre, Segundo lugar, Guayaquil.
+                <p><B>1994:</B> Primera Mención de Honor en la Primera Bienal de Escultura, Ambato.
+                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+              </div>
+            </div>
+          </div>
+          <!-- Artista Viktar Kopach-->
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+              <img src="http://www.bienaldelchaco.org/actividades/img/concurso_portada_bielorusia.png" height="500" width="500"alt="...">
+              <div class="caption">
+                <h3>Viktar Kopach<p>Bielorrusia</h3>
+                <p><B>2015:</B> 3º Premio, 1º Simposio Internacional de Escultura de Irán.
+                <p><B>2013:</B> 2º Premio, Concurso Internacional de Escultura en la Exposición Internacional de Horticultura de Qingdao, China.
+                <p><B>2011:</B> Reconocido con la Medalla del Ministerio de Cultura. 2º Premio, 1º Festival de Artes de Mudan Jiang Jimpo Lake, China.
+                <p><B>2008:</B> Parque Olímpico de China. 
+                <p><B>2005:</B> 1º Premio, Internacional de Minsk; Concurso de Jóvenes Arquitectos Leonardo, Bielorrusia. 
+                <p><B>2004:</B> 2º Premio, Simposio de Escultura en Granito, Bielorrusia. Seleccionado como Representante Oficial de Bielorrusia.
+                <p><B>2000:</B> Exhibición Nacional de Jóvenes Artistas Los Nuevos Nombres. 2º Premio, Fondo Presidencial de Apoyo a las Artes y la Cultura de Bielorrusia.
+                <p><B>1999:</B> Premio de los Medios de Comunicación en el Festival de las Nieves del 1º Festival de Esculturas de la Nieve y el Hielo, Rusia.
+                <p><B>1998:</B> Premio Paralelo del Jurado, nominación al Profesionalismo en Tiempo y Espacio, Bielorrusia.
+                <p><B>1996:</B> Otorgamiento del Fondo Soros, Conversación con las Piedras, Bielorrusia.
+                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Artista Tanya Preminger-->
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+              <img src="http://www.bienaldelchaco.org/actividades/img/concurso_portada_israel.png" height="500" width="500"alt="...">
+              <div class="caption">
+                <h3>Tanya Preminger<p>Israel</h3>
+                <p><B>2014:</B> 3º Premio, Competencia de Esculturas en la Nieve SculpOLIMP, Moscú, Rusia.
+                <p><B>2013:</B> 1º Premio, 2º Competencia Internacional de Esculturas del Mercosur, Benito Gonçalves, Brasil.
+                <p><B>2011:</B> 1º Premio, Primer Festival Internacional de Escultura Pública de China. Primer Premio, Competencia de Escultura en Piedra Forma Viva, Eslovenia.
+                <p><B>2010:</B> 1º Premio, Competencia Nasche Oteschavo, Moscú, Rusia.
+                <p><B>2007:</B> 2º Premio, Competencia Internacional de Esculturas La Pera Musa Agreste, Italia.
+                <p><B>2003:</B> 1º Premio, Competencia de Trabajo en Escultura, Mifal Hapais, Israel.
+                <p><B>1999:</B> 1º Premio, Competencia Internacional de Escultura en Piedra Nantopietra, Nanto, Italia.
+                <p><B>1997:</B> 1º Premio, Competencia Internacional de Escultura en Piedra, Fanano, Italia.
+                <p><B>1995:</B> Premio extraordinario, Competencia Internacional de Escultura en Piedra, Hualien, Taiwán.
+                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+              </div>
+            </div>
+          </div>
+          </div>
+          <div class="row">
+          <!-- Artista Mincu Nicolar Razvan-->
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+              <img src="http://www.bienaldelchaco.org/actividades/img/concurso_portada_rumania.png" height="500" width="500"alt="...">
+              <div class="caption">
+                <h3>Mincu Nicolar Razvan<p>Rumania</h3>
+                <p><B>2015:</B> Premio a la Excelencia, 1º Simposio Internacional, Fuzhou, China.
+                <p><B>2014:</B> Premio a la Excelencia, 1º Simposio Internacional, Pintgan, China.
+                <p><B>2013:</B> 2º Premio, 4º Simposio Internacional de Escultura, Grass, Francia.
+                <p><B>2012:</B> Premio a la Excelencia, 2º Simposio Internacional Monumental Wuhu Lui Kaiqu, China.
+                <p><B>2011:</B> 3º Premio, 1º Concurso Internacional de Diseño de Escultura Pública de China; Exhibición NGCPS: Semana Internacional de la Ciencia y de la Paz, Beijing, China. 
+                <p><B>2007:</B> Premio Carrara, 2º Simposio Internacional de Escultura, Grass, Francia.
+                <p><B>2002:</B> Premio a la Excelencia, Exhibición de Esculturas Públicas, Beijing, China.
+                <p><B>2001:</B> 2º Premio, Simposio Internacional de Escultura, La Chatre, Francia.
+                <p><B>1999:</B> 2º Premio, 2º Simposio Internacional de Escultura, Ichon, Corea.
+                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+              </div>
+            </div>
+          </div>
+          <!-- Artista Nils Hansen-->
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+              <img src="http://www.bienaldelchaco.org/actividades/img/concurso_portada_alemania.png" height="500" width="500"alt="...">
+              <div class="caption">
+                <h3>Nils Hansen<p>Alemania</h3>
+                <p>2015: Exhibición Colectiva Arte en Papel Amateras, en Sofía, Bulgaria. Artista de élite en el ZBrushCentral.
+                <p>2011: 1º Premio del Público en el 5to Simposio de Escultura en Piedra, Roldán, Argentina. Cortometraje Eclíptico. Mención de Honor en el Los Angeles Reel Film Festival. Selección Oficial en el Festival RMFF. Selección Oficial en el Sexto Festival de Proyección de Cortometrajes. Selección Oficial en el Festival de Cine Las Vegas. Selección Oficial para los Cortos de Wimbledon. Artista de Élite en el ZBrushCentral.
+                <p>2009-2013: Beca de estudio del Gobierno Alemán.
+                <p>2005-2008: Beca de trabajo Sesam, Italia, Unión Europea.
+                <p>2001-2003: Beca Weiterbildung, de la Cámara de Artesanos, Colonia.
+                <p>2003: 3º Mejor Aprendiz de Escultor, Alemania.</p>
+                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+              </div>
+            </div>
+          </div>
+          <!--Aca termina el artista N-->
+		    </div>
+		  </div>
+    </div>
+  </div>
+<!-- Script Creado por mi-->
+<script>
+  $('#myTabs a').click(function (e) {
+    e.preventDefault()
+    $(this).tab('show')
+  })
+  $('#myTabs a[href="#bienal"]').tab('show') // Select tab by name
+  $('#myTabs a[href="#urunday"]').tab('show') 
+  $('#myTabs a[href="#artistas"]').tab('show')
+</script>
+
+    <!-- The javascript =============================== -->
+    <!-- Script de Material Lite-->
+    <!--<script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>-->
+    <!-- Script de Bootstrap-->
+    <script src="{{=URL('static','js/bootstrap.min.js')}}"></script>
+    <script src="{{=URL('static','js/web2py-bootstrap3.js')}}"></script>
+    {{block page_js}}{{end page_js}}
+    {{if response.google_analytics_id:}}
+    <!-- Analytics ==================================== -->
+    <script src="{{=URL('static','js/analytics.min.js')}}"></script>
+    <script type="text/javascript">
+      analytics.initialize({
+      'Google Analytics':{trackingId:'{{=response.google_analytics_id}}'}
+      });
+    </script>
+    {{pass}}
+    <!-- Share ============================y============ -->
+    <script src="{{=URL('static','js/share.js',vars=dict(static=URL('static','images')))}}"></script>
+  </body>
+</html>
